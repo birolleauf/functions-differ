@@ -27,6 +27,7 @@ export default async function parseSpecFile(specFilePath: string): Promise<Resul
 export function resolveFunctionPaths(functions: Record<string, string>, specFileDir: string): Record<string, string> {
     return Object.entries(functions)
         .map(([fxName, fxPath]) => {
+            console.log('fxPath',fxPath)
             if (path.isAbsolute(fxPath)) {
                 return [fxName, fxPath];
             }
